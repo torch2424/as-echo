@@ -5,7 +5,7 @@ import { Console, CommandLine } from "./wasa";
 // Export our env overrides
 export { wasiabort } from "./env";
 
-export function _start(): void {
+export function echo(): void {
   // Parse command line arguments
   let commandLine = new CommandLine();
   let args: Array<string> = commandLine.all();
