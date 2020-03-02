@@ -1,9 +1,6 @@
 // The entry file of your WebAssembly module.
 
-import { Console, CommandLine } from "./wasa";
-
-// Export our env overrides
-export { wasiabort } from "./env";
+import { Console, CommandLine } from "as-wasi";
 
 export function _start(): void {
   // Parse command line arguments

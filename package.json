@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --sourceMap --validate --debug --use abort=wasiabort",
-    "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --sourceMap --validate --optimize --use abort=wasiabort",
+    "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --sourceMap --validate --debug --use abort=wasi_abort",
+    "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --sourceMap --validate --optimize --use abort=wasi_abort",
     "build": "npm run asbuild:untouched && npm run asbuild:optimized"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Aaron Turner",
+  "license": "MIT",
+  "dependencies": {
+    "as-wasi": "git+https://github.com/jedisct1/as-wasi.git"
+  },
   "devDependencies": {
-    "assemblyscript": "github:AssemblyScript/assemblyscript"
+    "assemblyscript": "^0.9.2"
   }
 }
